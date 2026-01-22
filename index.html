@@ -1,1 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramp Pricing Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Ramp Pricing Calculator</h1>
+        <p class="sub">Enter quantities. Totals update instantly.</p>
+      </header>
+
+      <section class="card">
+        <h2>Inputs</h2>
+
+        <div class="grid">
+          <label class="field">
+            <span>Total Ramp Length (linear ft)</span>
+            <input id="rampLength" type="number" inputmode="decimal" min="0" step="0.1" placeholder="e.g., 24" />
+          </label>
+
+          <label class="field">
+            <span>Total 5x5 Platforms (qty)</span>
+            <input id="p55" type="number" inputmode="numeric" min="0" step="1" placeholder="e.g., 2" />
+          </label>
+
+          <label class="field">
+            <span>Total 5x4 Platforms (qty)</span>
+            <input id="p54" type="number" inputmode="numeric" min="0" step="1" placeholder="e.g., 1" />
+          </label>
+
+          <label class="field">
+            <span>Total 4x4 Platforms (qty)</span>
+            <input id="p44" type="number" inputmode="numeric" min="0" step="1" placeholder="e.g., 0" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="resetBtn" class="btn secondary" type="button">Reset</button>
+          <button id="copyBtn" class="btn" type="button">Copy Quote</button>
+        </div>
+
+        <p id="copyStatus" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>Outputs</h2>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="kpiLabel">Total Square Ft</div>
+            <div class="kpiValue"><span id="totalSqft">0</span> sq ft</div>
+            <div class="kpiHint" id="sqftFormulaHint"></div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="quoteGrid">
+          <article class="quote">
+            <h3>New Ramp Purchase</h3>
+            <div class="row"><span>New Ramp Price</span><span id="newRampPrice">$0.00</span></div>
+            <div class="row"><span>Ramp Installation</span><span id="newInstall">$0.00</span></div>
+            <div class="row total"><span>Total New Ramp Purchase</span><span id="newTotal">$0.00</span></div>
+          </article>
+
+          <article class="quote">
+            <h3>Used Ramp Purchase</h3>
+            <div class="row"><span>Used Ramp Price</span><span id="usedRampPrice">$0.00</span></div>
+            <div class="row"><span>Ramp Installation</span><span id="usedInstall">$0.00</span></div>
+            <div class="row total"><span>Total Used Ramp Purchase</span><span id="usedTotal">$0.00</span></div>
+          </article>
+
+          <article class="quote">
+            <h3>Ramp Rental</h3>
+            <div class="row"><span>Monthly Rental</span><span id="rentalMonthly">$0.00</span></div>
+            <div class="row"><span>Used Ramp Installation &amp; Removal</span><span id="rentalInstallRemoval">$0.00</span></div>
+            <div class="row total"><span>1st Payment (3 months + install/removal)</span><span id="rentalFirstPayment">$0.00</span></div>
+            <div class="row"><span>Ongoing Monthly (4th month +)</span><span id="rentalOngoing">$0.00</span></div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>
+          Estimates only. Confirm final design, site conditions, and scope before contract.
+        </small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
 
